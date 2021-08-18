@@ -57,26 +57,6 @@ export default class Warning {
   }
 
   /**
-   * Default placeholder for warning title
-   *
-   * @public
-   * @returns {string}
-   */
-  static get DEFAULT_TITLE_PLACEHOLDER() {
-    return 'Title';
-  }
-
-  /**
-   * Default placeholder for warning message
-   *
-   * @public
-   * @returns {string}
-   */
-  static get DEFAULT_MESSAGE_PLACEHOLDER() {
-    return 'Message';
-  }
-
-  /**
    * Warning Tool`s styles
    *
    * @returns {object}
@@ -103,8 +83,8 @@ export default class Warning {
     this.api = api;
     this.readOnly = readOnly;
 
-    this.titlePlaceholder = config.titlePlaceholder || Warning.DEFAULT_TITLE_PLACEHOLDER;
-    this.messagePlaceholder = config.messagePlaceholder || Warning.DEFAULT_MESSAGE_PLACEHOLDER;
+    this.titlePlaceholder = this.api.i18n.t('placeholder');
+    this.messagePlaceholder = this.api.i18n.t('message');
 
     this.data = {
       title: data.title || '',
